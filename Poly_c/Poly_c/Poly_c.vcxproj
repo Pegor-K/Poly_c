@@ -142,10 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\Header.h" />
     <ClInclude Include="Polynomial.h" />
     <ClInclude Include="PolyTerm.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\implementation.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\Source.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
