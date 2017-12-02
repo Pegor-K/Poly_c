@@ -21,19 +21,10 @@
     <ClInclude Include="PolyTerm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\Header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\implementation.cpp">
-      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

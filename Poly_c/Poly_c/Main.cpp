@@ -6,7 +6,8 @@
 * Entry point to main function allowing user to test
 * functionality of Polynomial class...
 */
-//gay
+//This is a test -Peg
+
 
 #include <iostream>
 #include <stack>
