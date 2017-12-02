@@ -42,6 +42,6 @@ public:
 	//void multiply(RPN& calculator);
 	//void divide(RPN& calculator);*/
 
-	//RPN<Type>::RPN();
-	//RPN<Type>::~RPN();
+	RPN<Type>::RPN();
+	RPN<Type>::~RPN();
 };
