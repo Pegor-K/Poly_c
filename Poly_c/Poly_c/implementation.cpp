@@ -56,7 +56,7 @@ void RPN<Type>::input(RPN <Type>calculator)
 }
 
 template <class Type>
-void RPN<Type>::runfile(Type&data)
+void RPN<Type>::runfile(Type& data)
 {
 	// Code for inputting from a file
 	string poly1, poly2, op;
