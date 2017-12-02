@@ -5,7 +5,7 @@
 #include <vector>
 
 using namespace std;
-// This is a test to see if you can see what i am writing
+// I loveeeeeeeee rainbows
 class PolyTerm {
 public:
 	PolyTerm* next;
