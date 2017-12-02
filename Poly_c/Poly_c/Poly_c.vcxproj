@@ -148,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\implementation.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\Source.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

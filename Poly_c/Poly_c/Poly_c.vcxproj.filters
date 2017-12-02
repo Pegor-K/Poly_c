@@ -29,9 +29,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\Desktop\ECE191T\Projects\Final\ECE191 - Final\Final\Final\implementation.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
