@@ -2,7 +2,7 @@
 * Main.cpp
 *
 * ECE 191
-*
+*JON
 * Entry point to main function allowing user to test
 * functionality of Polynomial class...
 */
