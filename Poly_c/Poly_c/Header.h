@@ -5,7 +5,7 @@
 #include <vector>
 
 using namespace std;
-
+// This is a test to see if you can see what i am writing
 class PolyTerm {
 public:
 	PolyTerm* next;
@@ -36,7 +36,7 @@ public:
 
 	bool isOperator(const char input);
 	void performOperation(const string& input, RPN& calculator);
-
+	
 	///*void add(RPN& calculator);
 	//void subtract(RPN& calculator);
 	//void multiply(RPN& calculator);
