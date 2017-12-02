@@ -1,7 +1,7 @@
 /*
 * Main.cpp
 *
-* CSCI 41 - Project 1
+* ECE 191
 *
 * Entry point to main function allowing user to test
 * functionality of Polynomial class.
