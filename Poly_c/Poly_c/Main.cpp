@@ -4,8 +4,9 @@
 * ECE 191
 *
 * Entry point to main function allowing user to test
-* functionality of Polynomial class.
+* functionality of Polynomial class...
 */
+//gay
 
 #include <iostream>
 #include <stack>
