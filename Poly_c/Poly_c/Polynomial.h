@@ -314,7 +314,7 @@ public:
 	* as a single linked list within the object.
 	*/
 	void strToPoly(string polyStr) {
-		bool negCoef, negXPwr, negYPwr;
+		bool negCoef, negXPwr;
 		stack<int> coef, xPwr;
 		PolyTerm* currFront = NULL;
 		int termStage;
@@ -432,7 +432,7 @@ public:
 	string polyToStr() {
 		string polyStr = "";
 		PolyTerm* currTerm = front;
-		char buf[12];
+		//char buf[12];
 
 		for (currTerm = front; currTerm != NULL; currTerm = currTerm->next) {
 			// Add starting bracket for term to string
