@@ -3,9 +3,6 @@
 #include <string>
 #include <stack>
 #include <vector>
-
-
-
 template<typename T = double> class RPN
 {
 private:
@@ -30,7 +27,7 @@ public:
 
 
 
-	//void menu();
+	void menu();
 	/*void choice(RPN <T>   calculator);
 	void input(RPN <T> calculator);*/
 	// void runfile(Types... data);
