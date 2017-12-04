@@ -34,7 +34,7 @@ public:
 
 	void menu();
 	//void choice(RPN <T>   calculator);
-	//void input(RPN <T> calculator);*/
+	//void input(RPN <T> calculator);
 	// void runfile(Types... data);
 	//bool isOperator(const char input);
 	//void performOperation(const string& input, RPN <Container, Types...>& calculator);
