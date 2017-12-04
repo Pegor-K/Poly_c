@@ -88,21 +88,14 @@ return 0;
 
 int main()
 {
+	RPN <> Calc;
 
-	RPN <stack, int> test;
-	//test.menu();
-	cout << endl;
+	//Calc.menu();
 
-	test.stacks.push(5);
-	std::cout << test.stacks.top();
+	Calc.Push(3.141);
+	std::cout << Calc.Pop() << std::endl;
 
-
-
-	std::cin.ignore();
-
-
-
-
+	getchar();
 
 	return 0;
 }

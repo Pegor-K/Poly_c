@@ -11,52 +11,53 @@ using namespace std;
 //ifstream inFile("inData.txt");
 //ofstream outFile("outData.txt");
 
-template<template <typename... Args> class Container, typename... Types>
-void RPN<Container, Types...>::choice(RPN <Container, Types...> calculator)
-{
-	char n;
-	while (1)
-	{
-		cin >> n;
-		switch (n)
-		{
-		case 'f':
-			runfile(calculator.data);
-			break;
-		case 's':
-			input(calculator);
-			if (calculator.isOperator(calculator.data.top()))
-			{
-				calculator.performOperation(calculator.data.top(), calculator);
-				break;
-			}
-		default: return 0;
-		}
-	}
-}
 
-template<template <typename... Args> class Container, typename... Types>
-void RPN<Container, Types...>::input(RPN <Container, Types...> calculator)
-{
-	Types... temp;
+//template<typename T = double>
+//void RPN <T>::choice(RPN <T> calculator)
+//{
+//	char n;
+//	while (1)
+//	{
+//		cin >> n;
+//		switch (n)
+//		{
+//		case 'f':
+//			runfile(calculator.data);
+//			break;
+//		case 's':
+//			input(calculator);
+//			if (calculator.isOperator(calculator.data.top()))
+//			{
+//				calculator.performOperation(calculator.data.top(), calculator);
+//				break;
+//			}
+//		default: return 0;
+//		}
+//	}
+//}
+//
+//template<typename T = double>
+//void RPN<T>::input(RPN <T> calculator)
+//{
+//	Types... temp;
+//
+//	while (1)
+//	{
+//		cout << "Input: ";
+//		cin >> temp;
+//		static const string operators = "-+*/";
+//		if (temp.length() == 1 && isalpha(temp) == 0) // right size to be an operator.
+//		{
+//			calculator.performOperation(temp);
+//			// look in the operator string for the first (and only) character in input
+//		}
+//		else
+//			calculator.data.push(temp);
+//	}
+//}
 
-	while (1)
-	{
-		cout << "Input: ";
-		cin >> temp;
-		static const string operators = "-+*/";
-		if (temp.length() == 1 && isalpha(temp) == 0) // right size to be an operator.
-		{
-			calculator.performOperation(temp);
-			// look in the operator string for the first (and only) character in input
-		}
-		else
-			calculator.data.push(temp);
-	}
-}
-
-//template<template <typename... Args> class Container, typename... Types>
-//void RPN<Container, Types...>::runfile(Types...& data)
+//template<typename T = double>
+//void RPN::runfile(T data)
 //{
 //	// Code for inputting from a file
 //	string poly1, poly2, op;
@@ -73,8 +74,8 @@ void RPN<Container, Types...>::input(RPN <Container, Types...> calculator)
 //	}
 //}
 
-//template<template <typename... Args> class Container, typename... Types>
-//bool RPN<Container, Types...>::isOperator(const char input)
+//template<typename T = double>
+//bool RPN::isOperator(const char input)
 //{
 //	static const string operators = "-+*/";
 //	if (input.length() == 1 && isalpha(input) == 0) // right size to be an operator.
@@ -85,8 +86,8 @@ void RPN<Container, Types...>::input(RPN <Container, Types...> calculator)
 //	return false;
 //}
 
-//template<template <typename... Args> class Container, typename... Types>
-//void RPN<Container, Types...>::performOperation(const string& input, RPN <Container, Types...> calculator)
+//template<typename T = double>
+//void RPN::performOperation(const string& input, RPN calculator)
 //{
 //	switch (input[0])
 //	{
@@ -101,8 +102,8 @@ void RPN<Container, Types...>::input(RPN <Container, Types...> calculator)
 //	}
 //}
 
-
-//void RPN::add(RPN& calculator)
+//template<typename T = double>
+//void RPN::add(RPN<T> calculator)
 //{
 //	string poly1, poly2, result;
 //
@@ -112,7 +113,7 @@ void RPN<Container, Types...>::input(RPN <Container, Types...> calculator)
 //	poly2 = calculator.top();
 //	calculator.pop();
 //}
-//
+//template<typename T = double>
 //void RPN::subtract(RPN& calculator)
 //{
 //	string poly1, poly2, result;
@@ -125,7 +126,7 @@ void RPN<Container, Types...>::input(RPN <Container, Types...> calculator)
 //
 //	calculator.mapDegree(poly1);
 //}
-//
+//template<typename T = double>
 //void RPN::multiply(RPN& calculator)
 //{
 //	string poly1, poly2, result;
@@ -153,8 +154,8 @@ void RPN<Container, Types...>::input(RPN <Container, Types...> calculator)
 //	cout << "line 61" << endl;
 //}
 
-//template<template <typename... Args> class Container, typename... Types>
-//void RPN<Container, Types...>::menu()
+//template<typename T = double>
+//void RPN <T>::menu()
 //{
 //	cout << "	 _______  _______  ___      __   __  __    _  _______  __   __  ___   _______  ___			" << endl;
 //	cout << "	|       ||       ||   |    |  | |  ||  |  | ||       ||  |_|  ||   | |   _   ||   |			" << endl;
