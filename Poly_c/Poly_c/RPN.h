@@ -24,20 +24,25 @@ public:
 		return Result;
 	}
 
+	void Top()
+	{
+		cout << Stack.top();
+		cout << endl;
+	}
+
 
 
 	void menu();
-	/*void choice(RPN <T>   calculator);
-	void input(RPN <T> calculator);*/
+	//void choice(RPN <T>   calculator);
+	//void input(RPN <T> calculator);*/
 	// void runfile(Types... data);
 	//bool isOperator(const char input);
 	//void performOperation(const string& input, RPN <Container, Types...>& calculator);
 	void add();
-	//void subtract(RPN& calculator);
-	//void multiply(RPN& calculator);
-	//void divide(RPN& calculator);*/
-	//RPN<Type>::RPN();
-	//RPN<Type>::~RPN();
+	void subtract();
+	void multiply();
+	void divide();
+	
 };
 
 //ifstream inFile("inData.txt");
@@ -140,55 +145,42 @@ void RPN<T>::add()
 
 	Push(Pop() + Pop());
 	cout << Stack.top();
+	cout << endl;
 
-	//	string poly1, poly2, result;
-	//
-	//	calculator.pop();
-	//	poly1 = calculator.top();
-	//	calculator.pop();
-	//	poly2 = calculator.top();
-	//	calculator.pop();
+
+
 }
-//template<typename T = double>
-//void RPN::subtract(RPN& calculator)
-//{
-//	string poly1, poly2, result;
-//
-//	calculator.pop();
-//	poly1 = calculator.top();
-//	calculator.pop();
-//	poly2 = calculator.top();
-//	calculator.pop();
-//
-//	calculator.mapDegree(poly1);
-//}
-//template<typename T = double>
-//void RPN::multiply(RPN& calculator)
-//{
-//	string poly1, poly2, result;
-//
-//	calculator.pop();
-//	poly1 = calculator.top();
-//	calculator.pop();
-//	poly2 = calculator.top();
-//	calculator.pop();
-//
-//	calculator.mapDegree(poly1);
-//}
-//
-//void RPN::divide(RPN& calculator)
-//{
-//	string poly1, poly2, result;
-//
-//	calculator.pop();
-//	poly1 = calculator.top();
-//	calculator.pop();
-//	poly2 = calculator.top();
-//	calculator.pop();
-//
-//	calculator.mapDegree(poly1);
-//	cout << "line 61" << endl;
-//}
+template<typename T = double>
+void RPN<T>::subtract()
+{
+	Push( 0  - Pop() + Pop());
+	cout << Stack.top();
+	cout << endl;
+
+
+
+	
+}
+template<typename T = double>
+void RPN<T>::multiply()
+{
+
+
+	Push( Pop() * Pop());
+	cout << Stack.top();
+	cout << endl;
+
+	
+}
+
+template<typename T = double>
+void RPN<T>::divide()
+{
+	Push( 1 / Pop() * Pop());
+	cout << Stack.top();
+	cout << endl;
+
+}
 
 template<typename T = double>
 void RPN <T>::menu()
