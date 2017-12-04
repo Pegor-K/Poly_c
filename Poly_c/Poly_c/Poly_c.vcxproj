@@ -142,12 +142,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="RPN.h" />
     <ClInclude Include="Polynomial.h" />
     <ClInclude Include="PolyTerm.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="implementation.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

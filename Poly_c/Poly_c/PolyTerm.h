@@ -9,7 +9,7 @@
 *      [(Coefficient) * x^(xPwr) * y^(yPwr)].
 *
 * Implementation doesn't support fractional values for coefficient,
-* xPwr, or yPwr.
+* xPwr
 */
 
 class PolyTerm {
