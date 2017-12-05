@@ -2,51 +2,129 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <queue>
+using namespace std;
 template<typename T = double> class RPN
 {
 private:
 	std::stack<T> Stack;
+	std::queue <string> Queue;
 public:
-	void Push(T Value)
-	{
-		Stack.push(Value);
-	}
-	T Pop()
-	{
-		if (Stack.size() == 0)
-		{
-			return 0;
-		}
-
-		T Result = Stack.top();
-		Stack.pop();
-		return Result;
-	}
-	void Top()
-	{
-		cout << Stack.top();
-		cout << endl;
-	}
-
-
-
+	void Push(T Value); //push for stack
+	T Pop(); //pop for stack
+	void Top(); //top value of stack
+	void Qpush(string value); //push queue
+	string Qpop(); //pop queue
+	string Qfront(); //front queue
+	bool isPoly();
 	void menu();
 	//void choice();
 	void createfiles();
-	void readFiles();
+	string readFormat();
+	void readDefinitions();
 	//void input(RPN <T> calculator);
 	// void runfile(Types... data);
 	//bool isOperator(const char input);
 	//void performOperation(const string& input, RPN <Container, Types...>& calculator);
+	void calculate(string operations);
 	void add();
 	void subtract();
 	void multiply();
 	void divide();
 	
 };
+/////////////////////////////////////////////////////////////////////////////////////////////
+//implementations
+////////////////////////////////////////////////////////////////////////////////////////////
+
+template<typename T = double>
+//void RPN<T>::calculate(string operations)
+//{
+//	int pos;
+//	while (operations[pos] != '\0')
+//	{
+//		pos = operations.find_first_of("+-*/")
 //
-//ifstream inFile("inData.txt");
-//ofstream outFile("outData.txt");
+//	}
+//			
+//		switch (input[0])
+//		{
+//			case '+': add();
+//			break;
+//			case '-': subtract();
+//			break;
+//			case '*': multiply();
+//		    break;
+//			case '/': divide();
+//			break;
+//		}
+//}
+template<typename T = double>
+bool RPN<T>::isPoly()
+{
+	string polyTest = Queue.front;
+	if (polyTest[0] == 'p')
+		return true;
+	else
+		return false;
+}
+
+
+
+
+template<typename T = double>
+void RPN<T>::Push(T Value)
+{
+	Stack.push(Value);
+}
+
+template<typename T = double>
+T RPN<T>::Pop()
+{
+	if (Stack.size() == 0)
+	{
+		return 0;
+	}
+
+	T Result = Stack.top();
+	Stack.pop();
+	return Result;
+}
+
+template<typename T = double>
+void RPN<T>::Top()
+{
+	
+		cout << Stack.top();
+		cout << endl;
+	
+}
+
+template<typename T = double>
+void RPN<T>::Qpush(string value)
+{
+	Queue.push(value);
+}
+
+template<typename T = double>
+string RPN<T>::Qpop()
+{
+	if (Queue.size() == 0)
+	{
+		return 0;
+	}
+
+	string Result = Queue.front();
+	Queue.pop();
+	return Result;
+}
+
+template<typename T = double>
+string RPN<T>::Qfront()
+{
+	return Queue.front();
+	
+}
 
 
 //template<typename T = double>
@@ -226,27 +304,62 @@ void RPN<T>::createfiles() {
 	readme << "Polynomials must be in descending powers" << endl;
 
 	ofstream input("input.txt");
-	input << "(p1+p2)/p3*p4" << endl;
-	input << "p1 1x4 + 1x3 - 1x2 - 1x - 1" << endl;
-	input << "p2 2x3 + 2x2 + 3" << endl;
-	input << "p3 3x3 + 1" << endl;
-	input << "p4 4x4 - 8x" << endl;
+	input << "(d1+d2)/d3+d4*d1" << endl;
+	ofstream definitions("definitions.txt");
+	definitions << "d1: 4.5" << endl;
+	definitions << "d2: 8.9" << endl;
+	definitions << "d3: 9.2" << endl;
+	definitions << "d4: 22.5" << endl;
 }
 
 template<typename T = double>
-void RPN<T>::readFiles()
+void RPN<T>::readDefinitions()
 {
-	ifstream polyin("input.txt");
-	vector <string> vecin;
-	string temp1, format;
-
-	getline(polyin, format);
-	cout << "format is: " << format << endl;
-	while (polyin >> temp1) {
-		getline(polyin, temp1);
-		if (temp1.size() > 1) {
-			vecin.push_back(temp1);
-		}
+	/*bool isPoly = false;
+	ifstream polyTest("definitions.txt");
+	string  testForPoly;
+	getline(polyTest, testForPoly, '\n');
+	std::size_t pos = testForPoly.find('p');
+	if (pos == 0)
+	{
+		isPoly = true;
 	}
-	polyin.close();
+	
+	polyTest.close();*/
+	// ignore this for now, this code works if we need it
+
+
+
+	ifstream defined("definitions.txt");
+	string temp1, definition;
+	while (!defined.eof())
+	{
+		getline(defined, definition,'\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
+		Qpush(definition); //push defenitions into Queue, this will help order them later
+			
+	}
+	defined.close();
+
+	while (!Queue.empty())
+	{
+		std::cout << Qpop();
+		
+		cout << endl;
+	}
+
+
+
+}
+
+
+template<typename T = double>
+string RPN<T>::readFormat()
+{
+	ifstream operationIn("input.txt");
+	//vector <string> vecin;
+	string  operations;
+	getline(operationIn, operations, '\n');
+	//cout << operations << endl;
+	operationIn.close();
+	return operations;
 }

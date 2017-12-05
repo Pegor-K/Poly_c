@@ -78,8 +78,6 @@ cout << "Multiplied with: " << multPoly.polyToStr() << endl;
 origPoly.dot(multPoly.getFront());
 cout << "New Current Polynomial: " << origPoly.polyToStr() << endl;
 cout << endl;
-
-system("pause");
 return 0;
 } */
 
@@ -87,12 +85,12 @@ return 0;
 
 int main()
 {
-	RPN <> Calc; // <> is left blank because it is default a double enter any type you want
+	RPN <double> Calc; // <> is left blank because it is default a double, enter any type you want
 	//Calc.menu();
-
+	Calc.createfiles();
+	Calc.readDefinitions(); //can now read and store the defnitions of p1,p2,p3,d1,d2,d3...etc
+	cout << Calc.readFormat() << endl;
 	
-	
-
 	//cout << "Pushed: ";
 	//Calc.Push(3.141);
 	//Calc.Top();
