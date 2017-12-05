@@ -16,27 +16,29 @@ using namespace std;
 /////////////////////////////////////////////////
 
 template<typename T = double>
-//void RPN<T>::calculate(string operations)
-//{
-//	int pos;
-//	while (operations[pos] != '\0')
-//	{
-//		pos = operations.find_first_of("+-*/")
-//
-//	}
-//			
-//		switch (input[0])
-//		{
-//			case '+': add();
-//			break;
-//			case '-': subtract();
-//			break;
-//			case '*': multiply();
-//		    break;
-//			case '/': divide();
-//			break;
-//		}
-//}
+void RPN<T>::calculate(string operations)
+{
+	int pos;
+	while (operations[pos] != '\0')
+	{
+		pos = operations.find_first_of("+-*/")
+
+	}
+			
+		switch (input[0])
+		{
+			case '+': add();
+			break;
+			case '-': subtract();
+			break;
+			case '*': multiply();
+		    break;
+			case '/': divide();
+			break;
+		}
+}
+
+
 template<typename T = double>
 bool RPN<T>::isPoly()
 {
@@ -265,7 +267,7 @@ void RPN<T>::createfiles() {
 	readme << "Polynomials must be in descending powers" << endl;
 
 	ofstream input("input.txt");
-	input << "(d1+d2)/d3+d4*d1" << endl;
+	input << "d1 d2 / d3 + d4 * d1" << endl;
 	ofstream definitions("definitions.txt");
 	definitions << "d1: 4.5" << endl;
 	definitions << "d2: 8.9" << endl;
