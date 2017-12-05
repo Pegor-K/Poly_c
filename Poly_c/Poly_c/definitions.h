@@ -47,9 +47,6 @@ bool RPN<T>::isPoly()
 		return false;
 }
 
-
-
-
 template<typename T = double>
 void RPN<T>::Push(T Value)
 {
