@@ -3,6 +3,7 @@
 #include <string>
 #include <stack>
 #include <queue>
+#include <cstdbool>
 using namespace std;
 template<typename T = double> class RPN
 {
@@ -16,7 +17,7 @@ public:
 	void Qpush(string value); //push queue
 	string Qpop(); //pop queue
 	string Qfront(); //front queue
-	bool isPoly();
+	//bool isPoly();
 	void menu();
 	//void choice();
 	void createfiles();
@@ -26,7 +27,7 @@ public:
 	// void runfile(Types... data);
 	//bool isOperator(const char input);
 	//void performOperation(const string& input, RPN <Container, Types...>& calculator);
-	void calculate(string operations);
+	//void calculate(string operations);
 	void add();
 	void subtract();
 	void multiply();
@@ -37,7 +38,7 @@ public:
 //implementations
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-template<typename T = double>
+//template<typename T = double>
 //void RPN<T>::calculate(string operations)
 //{
 //	int pos;
@@ -59,15 +60,16 @@ template<typename T = double>
 //			break;
 //		}
 //}
-template<typename T = double>
-bool RPN<T>::isPoly()
-{
-	string polyTest = Queue.front;
-	if (polyTest[0] == 'p')
-		return true;
-	else
-		return false;
-}
+
+//template<typename T = double>
+//bool RPN<T>::isPoly()
+//{
+//	string polyTest = Queue.front();
+//	if (polyTest[0] == 'p')
+//		return true;
+//	else
+//		return false;
+//}
 
 
 
