@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "RPN.h"
-#include "RPNdefined.h"
+#include "Header.h"
+#include "Definitions.h"
 #include <iostream>
 #include <stack>
 #include "Polynomial.h"
