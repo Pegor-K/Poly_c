@@ -89,7 +89,23 @@ int main()
 {
 	RPN <> Calc; // <> is left blank because it is default a double enter any type you want
 	Calc.menu();
-	Calc.choice(Calc);
+	//Calc.choice(Calc);
+
+	////////////new to read in from file
+	ifstream polyin("input.txt");
+	vector <string> vecin;
+	string temp1, format;
+
+	getline(polyin, format);
+	cout << "format is: " << format << endl;
+	while (polyin >> temp1) {
+		getline(polyin, temp1);
+		if (temp1.size() > 1) {
+			vecin.push_back(temp1);
+		}
+	}
+	polyin.close();
+	////////////
 
 	//cout << "Pushed: ";
 	//Calc.Push(3.141);
