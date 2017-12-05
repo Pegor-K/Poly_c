@@ -34,6 +34,25 @@ public:
 	void divide();
 	
 };
+
+// Node for each poly term
+class PolyTerm {
+public:
+	PolyTerm* next;
+	int coef, xPwr;
+
+	PolyTerm() {
+		next = NULL;
+		coef = xPwr = 0;
+	}
+
+	PolyTerm(int coef, int xPwr, PolyTerm* next) {
+		this->coef = coef;
+		this->xPwr = xPwr;
+		this->next = next;
+	}
+};
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 //implementations
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -97,8 +116,8 @@ template<typename T = double>
 void RPN<T>::Top()
 {
 	
-		cout << Stack.top();
-		cout << endl;
+	cout << Stack.top();
+	cout << endl;
 	
 }
 
@@ -222,17 +241,9 @@ string RPN<T>::Qfront()
 template<typename T = double>
 void RPN<T>::add()
 {
-
-	cout << "Debug add function" << endl;
-
-	system("pause");
-
 	Push(Pop() + Pop());
 	cout << Stack.top();
 	cout << endl;
-
-
-
 }
 template<typename T = double>
 void RPN<T>::subtract()
@@ -240,21 +251,13 @@ void RPN<T>::subtract()
 	Push( 0  - Pop() + Pop());
 	cout << Stack.top();
 	cout << endl;
-
-
-
-	
 }
 template<typename T = double>
 void RPN<T>::multiply()
 {
-
-
 	Push( Pop() * Pop());
 	cout << Stack.top();
 	cout << endl;
-
-	
 }
 
 template<typename T = double>
@@ -263,7 +266,6 @@ void RPN<T>::divide()
 	Push( 1 / Pop() * Pop());
 	cout << Stack.top();
 	cout << endl;
-
 }
 
 template<typename T = double>
@@ -334,6 +336,7 @@ void RPN<T>::readDefinitions()
 
 	ifstream defined("definitions.txt");
 	string temp1, definition;
+
 	while (!defined.eof())
 	{
 		getline(defined, definition,'\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
@@ -345,12 +348,8 @@ void RPN<T>::readDefinitions()
 	while (!Queue.empty())
 	{
 		std::cout << Qpop();
-		
 		cout << endl;
 	}
-
-
-
 }
 
 
