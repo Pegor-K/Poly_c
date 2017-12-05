@@ -20,7 +20,7 @@ public:
 	void Qpush(string value); //push queue
 	string Qpop(); //pop queue
 	string Qfront(); //front queue
-	//bool isPoly();
+	bool isPoly();
 	void menu();
 	//void choice();
 	void createfiles();
