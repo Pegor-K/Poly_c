@@ -31,7 +31,9 @@ public:
 
 
 	void menu();
-	void choice();
+	//void choice();
+	void createfiles();
+	void readFiles();
 	//void input(RPN <T> calculator);
 	// void runfile(Types... data);
 	//bool isOperator(const char input);
@@ -211,22 +213,40 @@ void RPN <T>::menu()
 }
 
 //This creates the readme, as well as the input file format
+template<typename T = double>
+void RPN<T>::createfiles() {
+	ofstream readme("readme.txt");
+	readme << "This is the polynomial calculator, it will take the polynomials you enter in \"input.txt\" and calculate them." << endl;
+	readme << "The format must remain as it is set up in the input.txt file" << endl;
+	readme << "For example, the first line will be the operations to be performed on the polynomial sets" << endl;
+	readme << "The following lines will be the polynomial definitions themselves." << endl;
+	readme << "You may alter the operations performed in the first line, and add or remove polynomials as desired" << endl;
+	readme << "Please be sure to enter additional polynomials in the same format they are given" << endl;
+	readme << "Ex. \"p5 4x4+2x3 + 2x\"." << endl;
+	readme << "Polynomials must be in descending powers" << endl;
 
-//void RPN::createfiles() {
-//	ofstream readme("readme.txt");
-//	readme << "This is the polynomial calculator, it will take the polynomials you enter in \"input.txt\" and calculate them." << endl;
-//	readme << "The format must remain as it is set up in the input.txt file" << endl;
-//	readme << "For example, the first line will be the operations to be performed on the polynomial sets" << endl;
-//	readme << "The following lines will be the polynomial definitions themselves." << endl;
-//	readme << "You may alter the operations performed in the first line, and add or remove polynomials as desired" << endl;
-//	readme << "Please be sure to enter additional polynomials in the same format they are given" << endl;
-//	readme << "Ex. \"p5 4x4+2x3 + 2x\"." << endl;
-//	readme << "Polynomials must be in descending powers" << endl;
-//
-//	ofstream input("input.txt");
-//	input << "(p1+p2)/p3*p4" << endl;
-//	input << "p1 1x4 + 1x3 - 1x2 - 1x - 1" << endl;
-//	input << "p2 2x3 + 2x2 + 3" << endl;
-//	input << "p3 3x3 + 1" << endl;
-//	input << "p4 4x4 - 8x" << endl;
-//}
+	ofstream input("input.txt");
+	input << "(p1+p2)/p3*p4" << endl;
+	input << "p1 1x4 + 1x3 - 1x2 - 1x - 1" << endl;
+	input << "p2 2x3 + 2x2 + 3" << endl;
+	input << "p3 3x3 + 1" << endl;
+	input << "p4 4x4 - 8x" << endl;
+}
+
+template<typename T = double>
+void RPN<T>::readFiles()
+{
+	ifstream polyin("input.txt");
+	vector <string> vecin;
+	string temp1, format;
+
+	getline(polyin, format);
+	cout << "format is: " << format << endl;
+	while (polyin >> temp1) {
+		getline(polyin, temp1);
+		if (temp1.size() > 1) {
+			vecin.push_back(temp1);
+		}
+	}
+	polyin.close();
+}
