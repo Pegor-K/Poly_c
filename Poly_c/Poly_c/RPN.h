@@ -229,4 +229,4 @@ void RPN <T>::menu()
 //	input << "p2 2x3 + 2x2 + 3" << endl;
 //	input << "p3 3x3 + 1" << endl;
 //	input << "p4 4x4 - 8x" << endl;
-}
+//}
