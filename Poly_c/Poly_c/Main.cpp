@@ -13,14 +13,7 @@ using namespace std;
 
 /*
 * Main.cpp
-*
-* ECE 191
-*JON
-* Entry point to main function allowing user to test
-* functionality of Polynomial class...
-*/
-//gay
-//another test: anthony
+
 
 /*
 int main() {
@@ -92,38 +85,39 @@ return 0;
 
 
 
-	int main()
-	{
-		RPN <> Calc; // <> is left blank because it is default a double enter any type you want
-		Calc.menu();
+int main()
+{
+	RPN <> Calc; // <> is left blank because it is default a double enter any type you want
+	Calc.menu();
+	Calc.choice(Calc);
 
-		cout << "Pushed: ";
-		Calc.Push(3.141);
-	    Calc.Top();
-		cout << "Pushed: ";
-		Calc.Push(7.5);
-		Calc.Top();
-		cout << "Results of addition: ";
-		Calc.add();//when called it'll work on any type
-		cout << "Pushed :";
-		Calc.Push(3.641);
-		Calc.Top();
-		cout << "Results of subtraction: ";
-		Calc.subtract();
-		cout << "Pushed: ";
-		Calc.Push(3);
-		Calc.Top();
-		cout << "Results of Multiplication: ";
-		Calc.multiply();
-		cout << "Pushed: ";
-		Calc.Push(7.57354);
-		Calc.Top();
-		cout << "Results of Division: ";
-		Calc.divide();
-		// demo the complete functionality of this calculator!
+	//cout << "Pushed: ";
+	//Calc.Push(3.141);
+	//Calc.Top();
+	//cout << "Pushed: ";
+	//Calc.Push(7.5);
+	//Calc.Top();
+	//cout << "Results of addition: ";
+	//Calc.add();//when called it'll work on any type
+	//cout << "Pushed :";
+	//Calc.Push(3.641);
+	//Calc.Top();
+	//cout << "Results of subtraction: ";
+	//Calc.subtract();
+	//cout << "Pushed: ";
+	//Calc.Push(3);
+	//Calc.Top();
+	//cout << "Results of Multiplication: ";
+	//Calc.multiply();
+	//cout << "Pushed: ";
+	//Calc.Push(7.57354);
+	//Calc.Top();
+	//cout << "Results of Division: ";
+	//Calc.divide();
+	//// demo the complete functionality of this calculator!
 
 
-		getchar();
+	//getchar();
 
-		return 0;
-	}
+	return 0;
+}

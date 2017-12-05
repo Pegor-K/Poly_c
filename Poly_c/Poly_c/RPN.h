@@ -11,7 +11,6 @@ public:
 	{
 		Stack.push(Value);
 	}
-
 	T Pop()
 	{
 		if (Stack.size() == 0)
@@ -23,7 +22,6 @@ public:
 		Stack.pop();
 		return Result;
 	}
-
 	void Top()
 	{
 		cout << Stack.top();
@@ -33,7 +31,7 @@ public:
 
 
 	void menu();
-	//void choice(RPN <T>   calculator);
+	void choice(RPN <T>   calculator);
 	//void input(RPN <T> calculator);
 	// void runfile(Types... data);
 	//bool isOperator(const char input);
@@ -45,103 +43,107 @@ public:
 	
 };
 
-//ifstream inFile("inData.txt");
-//ofstream outFile("outData.txt");
+ifstream inFile("inData.txt");
+ofstream outFile("outData.txt");
 
 
-//template<typename T = double>
-//void RPN <T>::choice(RPN <T> calculator)
-//{
-//	char n;
-//	while (1)
-//	{
-//		cin >> n;
-//		switch (n)
-//		{
-//		case 'f':
-//			runfile(calculator.data);
-//			break;
-//		case 's':
-//			input(calculator);
-//			if (calculator.isOperator(calculator.data.top()))
-//			{
-//				calculator.performOperation(calculator.data.top(), calculator);
-//				break;
-//			}
-//		default: return 0;
-//		}
-//	}
-//}
-//
-//template<typename T = double>
-//void RPN<T>::input(RPN <T> calculator)
-//{
-//	Types... temp;
-//
-//	while (1)
-//	{
-//		cout << "Input: ";
-//		cin >> temp;
-//		static const string operators = "-+*/";
-//		if (temp.length() == 1 && isalpha(temp) == 0) // right size to be an operator.
-//		{
-//			calculator.performOperation(temp);
-//			// look in the operator string for the first (and only) character in input
-//		}
-//		else
-//			calculator.data.push(temp);
-//	}
-//}
+template<typename T = double>
+void RPN <T>::choice(RPN <T> calculator)
+{
+	char n;
+	while (1)
+	{
+		cin >> n;
+		switch (n)
+		{
+		case 'f':
+			runfile(calculator.data);
+			break;
+		case 's':
+			input(calculator);
+			if (calculator.isOperator(calculator.data.top()))
+			{
+				calculator.performOperation(calculator.data.top(), calculator);
+				break;
+			}
+		default: return 0;
+		}
+	}
+}
 
-//template<typename T = double>
-//void RPN::runfile(T data)
-//{
-//	// Code for inputting from a file
-//	string poly1, poly2, op;
-//
-//	inFile >> poly1 >> poly2 >> op;
-//
-//	data.push(poly2);
-//	data.push(poly1);
-//	data.push(op);
-//
-//	if (data.isOperator(data.top()))
-//	{
-//		data.performOperation(data.top(), data);
-//	}
-//}
+template<typename T = double>
+void RPN<T>::input(RPN <T> calculator)
+{
+	Types... temp;
 
-//template<typename T = double>
-//bool RPN::isOperator(const char input)
-//{
-//	static const string operators = "-+*/";
-//	if (input.length() == 1 && isalpha(input) == 0) // right size to be an operator.
-//	{
-//		return operators.find_first_of(input[0]) != string::npos;
-//		// look in the operator string for the first (and only) character in input
-//	}
-//	return false;
-//}
+	while (1)
+	{
+		cout << "Input: ";
+		cin >> temp;
+		static const string operators = "-+*/";
+		if (temp.length() == 1 && isalpha(temp) == 0) // right size to be an operator.
+		{
+			calculator.performOperation(temp);
+			// look in the operator string for the first (and only) character in input
+		}
+		else
+			calculator.data.push(temp);
+	}
+}
 
-//template<typename T = double>
-//void RPN::performOperation(const string& input, RPN calculator)
-//{
-//	switch (input[0])
-//	{
-//	case '+': calculator.add(calculator);
-//		break;
-//	case '-': calculator.subtract(calculator);
-//		break;
-//	case '*': calculator.multiply(calculator);
-//		break;
-//	case '/':  calculator.divide(calculator);
-//		break;
-//	}
-//}
+template<typename T = double>
+void RPN::runfile(T data)
+{
+	// Code for inputting from a file
+	string poly1, poly2, op;
+
+	inFile >> poly1 >> poly2 >> op;
+
+	data.push(poly2);
+	data.push(poly1);
+	data.push(op);
+
+	if (data.isOperator(data.top()))
+	{
+		data.performOperation(data.top(), data);
+	}
+}
+
+template<typename T = double>
+bool RPN::isOperator(const char input)
+{
+	static const string operators = "-+*/";
+	if (input.length() == 1 && isalpha(input) == 0) // right size to be an operator.
+	{
+		return operators.find_first_of(input[0]) != string::npos;
+		// look in the operator string for the first (and only) character in input
+	}
+	return false;
+}
+
+template<typename T = double>
+void RPN::performOperation(const string& input, RPN calculator)
+{
+	switch (input[0])
+	{
+	case '+': calculator.add(calculator);
+		break;
+	case '-': calculator.subtract(calculator);
+		break;
+	case '*': calculator.multiply(calculator);
+		break;
+	case '/':  calculator.divide(calculator);
+		break;
+	}
+}
 
 template<typename T = double>
 void RPN<T>::add()
 {
+
+	cout << "Debug add function" << endl;
+
+	system("pause");
 
 	Push(Pop() + Pop());
 	cout << Stack.top();
