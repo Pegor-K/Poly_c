@@ -17,8 +17,8 @@
 * xPwr, or yPwr.
 *
 * When inputting polynomial, polyStr must be of the form:
-*      (c*x^pwr*y^pwr)+...
-* Xs and Ys with powers of 0 can safely be omitted from input string.
+*      (c*x^pwr)+...
+* Xs with powers of 0 can safely be omitted from input string.
 *
 */
 
