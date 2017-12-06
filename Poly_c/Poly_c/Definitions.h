@@ -266,19 +266,19 @@ void RPN<T>::createfiles() {
 	input << "d3 +" << endl;
 	input << "d4 *" << endl;
 	input << "d1 +" << endl;
-	ofstream definitions("definitions.txt");
-	definitions << "p1: (3x ^ 2) + (2x) + (5)" << endl;
-	definitions << "p2: (5x ^ 2) + (3x) + (4)" << endl;
-	definitions << "P3: (2x ^ 2) + (6x) + (7)" << endl;
-	definitions << "P4: (4x ^ 2) + (7x) + (8)" << endl;
+	//ofstream definitions("definitions.txt");
+	//definitions << "d1: 4.5" << endl;
+	//definitions << "d2: 8.9" << endl;
+	//definitions << "d3: 9.2" << endl;
+	//definitions << "d4: 22.5" << endl;
 
-	//Copy to input text 
+	// Copy to input text 
 	/*p1 p2 + p3 / p4 *
 
 		p1: (3x ^ 2) + (2x) + (5)
-		p2: (5x ^ 2) + (3x) + (4)
-		P3: (2x ^ 2) + (6x) + (7)
-		P4: (4x ^ 2) + (7x) + (8)*/
+		p2 : (5x ^ 2) + (3x) + (4)
+		P3 : (2x ^ 2) + (6x) + (7)
+		P4 : (4x ^ 2) + (7x) + (8)*/
 }
 
 template<typename T = double>
@@ -308,6 +308,8 @@ void RPN<T>::readDefinitions()
 		getline(inFile, poly, '\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
 		std::size_t pos = poly.find(':');
 		poly = poly.substr(pos + 1);
+		cout << poly << endl;
+		cout << Vector.size() << endl;
 		Vector.push_back(poly); //push defenitions into vector, this will help order them later
 		
 	}
