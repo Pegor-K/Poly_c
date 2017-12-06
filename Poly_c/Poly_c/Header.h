@@ -30,7 +30,7 @@ public:
 	// void runfile(Types... data);
 	//bool isOperator(const char input);
 	//void performOperation(const string& input, RPN <Container, Types...>& calculator);
-	//void calculate(string operations);
+	void calculate(string operations);
 	void add();
 	void subtract();
 	void multiply();

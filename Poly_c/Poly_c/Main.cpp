@@ -91,9 +91,6 @@ int main()
 	Calc.createfiles();
 	Calc.readDefinitions(); //can now read and store the defnitions of p1,p2,p3,d1,d2,d3...etc
 	cout << Calc.readFormat() << endl;
-
-	Polynomial poly;
-	poly.coefficient()
 	
 	//cout << "Pushed: ";
 	//Calc.Push(3.141);
