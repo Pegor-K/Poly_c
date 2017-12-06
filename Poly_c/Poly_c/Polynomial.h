@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+
 /*
 * Polynomial.h
 *
@@ -25,7 +25,8 @@
 #include <string>
 #include <stack>
 #include <cstdlib>
-#include "PolyTerm.h"
+#include <vector>
+#include "Header.h"
 
 using namespace std;
 
