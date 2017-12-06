@@ -8,12 +8,8 @@
 #include <stdio.h>
 #include <string>
 #include <fstream>
+
 using namespace std;
-
-
-
-/*
-* Main.cpp
 
 
 /*
@@ -103,7 +99,7 @@ int main()
 
 	// Limits files to only contain 10 polynomials
 	// Instantiates polys
-	/*for (int i = 0; i < Calc.Vector.size(); i++)
+	/*for (int i = 0; i < n; i++)
 	{
 		switch (i)
 		{
@@ -141,8 +137,8 @@ int main()
 			cout << "No polynomials were created" << endl;
 			break;
 		}
-	}
-*/
+	}*/
+
 	//Polynomial origPoly("(5*x^4)+(8*x^3)+(3*x^2)+(8)");
 	//Polynomial failPoly("(5*x^3)+(2*x^2)+32");
 	//Polynomial passPoly("(-5*x^-4)+(8*x^3)+(3*x^2)+(4*y^3)+(8)");
