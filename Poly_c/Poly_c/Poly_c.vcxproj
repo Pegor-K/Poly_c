@@ -142,9 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Header.h" />
     <ClInclude Include="RPN.h" />
     <ClInclude Include="Polynomial.h" />
     <ClInclude Include="PolyTerm.h" />
+    <ClInclude Include="RPNdefined.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
