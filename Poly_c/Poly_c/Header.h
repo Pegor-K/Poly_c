@@ -36,7 +36,6 @@ public:
 	void subtract();
 	void multiply();
 	void divide();
-	
 };
 
 // Node for each poly term
