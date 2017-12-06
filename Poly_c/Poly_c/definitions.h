@@ -302,21 +302,23 @@ void RPN<T>::readDefinitions()
 	polyTest.close();*/
 	// ignore this for now, this code works if we need it
 
+	// Code below is currently not working 
 
+	ifstream inFile("definitions.txt");
 
-	ifstream defined("polys.txt");
-	string temp1, definition;
+	string poly;
 
-	while (!defined.eof())
+	while (!inFile.eof())
 	{
-		getline(defined, definition, '\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
-		std::size_t pos = definition.find(':');
-		definition = definition.substr(pos + 1);
-		cout << definition << endl;
-		Vector.push_back(definition); //push defenitions into vector, this will help order them later
+		getline(inFile, poly, '\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
+		std::size_t pos = poly.find(':');
+		poly = poly.substr(pos + 1);
+		cout << poly << endl;
+		cout << Vector.size() << endl;
+		Vector.push_back(poly); //push defenitions into vector, this will help order them later
 		
 	}
-	defined.close();
+	inFile.close();
 
 
 }

@@ -110,7 +110,6 @@ int main()
 		case 0:
 			Polynomial P1(Calc.Vector[i]);
 			break;
-
 		case 1:
 			Polynomial P2(Calc.Vector[i]);
 			break;
