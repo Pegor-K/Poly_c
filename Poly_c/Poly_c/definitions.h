@@ -260,7 +260,7 @@ void RPN<T>::createfiles() {
 	readme << "The following lines will be the polynomial definitions themselves." << endl;
 	readme << "You may alter the operations performed in the first line, and add or remove polynomials as desired" << endl;
 	readme << "Please be sure to enter additional polynomials in the same format they are given" << endl;
-	readme << "Ex. \"p5 4x4+2x3 + 2x\"." << endl;
+	readme << "Ex. \"p5: (4x^4)+(2x^3)+(2x)\"." << endl;
 	readme << "Polynomials must be in descending powers" << endl;
 
 	ofstream input("input.txt");
