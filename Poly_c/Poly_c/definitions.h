@@ -271,11 +271,11 @@ void RPN<T>::createfiles() {
 	input << "d3 +" << endl;
 	input << "d4 *" << endl;
 	input << "d1 +" << endl;
-	ofstream definitions("definitions.txt");
-	definitions << "d1: 4.5" << endl;
-	definitions << "d2: 8.9" << endl;
-	definitions << "d3: 9.2" << endl;
-	definitions << "d4: 22.5" << endl;
+	//ofstream definitions("definitions.txt");
+	//definitions << "d1: 4.5" << endl;
+	//definitions << "d2: 8.9" << endl;
+	//definitions << "d3: 9.2" << endl;
+	//definitions << "d4: 22.5" << endl;
 
 	// Copy to input text 
 	/*p1 p2 + p3 / p4 *
@@ -304,7 +304,7 @@ void RPN<T>::readDefinitions()
 
 
 
-	ifstream defined("definitions.txt");
+	ifstream defined("polys.txt");
 	string temp1, definition;
 
 	while (!defined.eof())
@@ -312,8 +312,9 @@ void RPN<T>::readDefinitions()
 		getline(defined, definition, '\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
 		std::size_t pos = definition.find(':');
 		definition = definition.substr(pos + 1);
+		cout << definition << endl;
 		Vector.push_back(definition); //push defenitions into vector, this will help order them later
-
+		
 	}
 	defined.close();
 
