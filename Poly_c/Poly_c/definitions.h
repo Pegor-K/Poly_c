@@ -270,6 +270,14 @@ void RPN<T>::createfiles() {
 	definitions << "d2: 8.9" << endl;
 	definitions << "d3: 9.2" << endl;
 	definitions << "d4: 22.5" << endl;
+
+	// Copy to input text 
+	/*p1 p2 + p3 / p4 *
+
+		p1: (3x ^ 2) + (2x) + (5)
+		p2 : (5x ^ 2) + (3x) + (4)
+		P3 : (2x ^ 2) + (6x) + (7)
+		P4 : (4x ^ 2) + (7x) + (8)*/
 }
 
 template<typename T = double>
