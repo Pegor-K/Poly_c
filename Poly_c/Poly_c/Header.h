@@ -12,14 +12,15 @@ template<typename T = double> class RPN
 {
 private:
 	std::stack<T> Stack;
-	std::queue <string> Queue;
+	//std::queue <string> Queue;
 public:
+	std:: vector <string> Vector;
 	void Push(T Value); //push for stack
 	T Pop(); //pop for stack
 	void Top(); //top value of stack
-	void Qpush(string value); //push queue
-	string Qpop(); //pop queue
-	string Qfront(); //front queue
+	//void Qpush(string value); //push queue
+	//string Qpop(); //pop queue
+	//string Qfront(); //front queue
 	bool isPoly();
 	void menu();
 	//void choice();

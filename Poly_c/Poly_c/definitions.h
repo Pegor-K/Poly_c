@@ -77,31 +77,31 @@ void RPN<T>::Top()
 
 }
 
-template<typename T = double>
-void RPN<T>::Qpush(string value)
-{
-	Queue.push(value);
-}
-
-template<typename T = double>
-string RPN<T>::Qpop()
-{
-	if (Queue.size() == 0)
-	{
-		return 0;
-	}
-
-	string Result = Queue.front();
-	Queue.pop();
-	return Result;
-}
-
-template<typename T = double>
-string RPN<T>::Qfront()
-{
-	return Queue.front();
-
-}
+//template<typename T = double>
+//void RPN<T>::Qpush(string value)
+//{
+//	Queue.push(value);
+//}
+//
+//template<typename T = double>
+//string RPN<T>::Qpop()
+//{
+//	if (Queue.size() == 0)
+//	{
+//		return 0;
+//	}
+//
+//	string Result = Queue.front();
+//	Queue.pop();
+//	return Result;
+//}
+//
+//template<typename T = double>
+//string RPN<T>::Qfront()
+//{
+//	return Queue.front();
+//
+//}
 
 
 //template<typename T = double>
@@ -296,16 +296,12 @@ void RPN<T>::readDefinitions()
 	while (!defined.eof())
 	{
 		getline(defined, definition, '\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
-		Qpush(definition); //push defenitions into Queue, this will help order them later
+		Vector.push_back(definition); //push defenitions into vector, this will help order them later
 
 	}
 	defined.close();
 
-	while (!Queue.empty())
-	{
-		std::cout << Qpop();
-		cout << endl;
-	}
+
 }
 
 
@@ -313,10 +309,8 @@ template<typename T = double>
 string RPN<T>::readFormat()
 {
 	ifstream operationIn("input.txt");
-	//vector <string> vecin;
 	string  operations;
 	getline(operationIn, operations, '\n');
-	//cout << operations << endl;
 	operationIn.close();
 	return operations;
 }

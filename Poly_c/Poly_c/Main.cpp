@@ -91,6 +91,11 @@ int main()
 	Calc.createfiles();
 	Calc.readDefinitions(); //can now read and store the defnitions of p1,p2,p3,d1,d2,d3...etc
 	cout << Calc.readFormat() << endl;
+	for (int i = 0; i < Calc.Vector.size(); i++)
+	{
+		cout << Calc.Vector[i] << endl;
+
+	}
 	
 	//cout << "Pushed: ";
 	//Calc.Push(3.141);
