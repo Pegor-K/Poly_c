@@ -15,6 +15,8 @@ private:
 	//std::queue <string> Queue;
 public:
 	std:: vector <string> Vector;
+	std::stack<string> poly;
+
 	void Push(T Value); //push for stack
 	T Pop(); //pop for stack
 	void Top(); //top value of stack
