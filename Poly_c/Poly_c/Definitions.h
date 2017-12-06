@@ -21,19 +21,24 @@ void RPN<T>::calculate(string operations)
 	int pos1, pos2;
 	while (operations[pos2] != '\0')
 	{
+		
+
+		
+
 
 	}
-	switch (input[0])
-	{
-		case '+': add();
-		break;
-		case '-': subtract();
-		break;
-		case '*': multiply();
-		break;
-		case '/': divide();
-		break;
-	}
+			
+		switch (input[0])
+		{
+			case '+': add();
+			break;
+			case '-': subtract();
+			break;
+			case '*': multiply();
+		    break;
+			case '/': divide();
+			break;
+		}
 }
 
 
@@ -301,34 +306,19 @@ void RPN<T>::readDefinitions()
 
 	ifstream inFile("definitions.txt");
 
-	string line1; 
-	string line2;
-	string line3;
-	string line4;
+	string poly;
 
 	while (!inFile.eof())
 	{
-		getline(inFile, line1, '\n');
-		std::size_t pos = line1.find(':');
-		line1 = line1.substr(pos + 1);
-		Vector.push_back(line1); 
-
-		getline(inFile, line2, '\n');
-		std::size_t pos = line2.find(':');
-		line2 = line2.substr(pos + 1);
-		Vector.push_back(line2);
-
-		getline(inFile, line3, '\n');
-		std::size_t pos = line3.find(':');
-		line3 = line3.substr(pos + 1);
-		Vector.push_back(line3);
-
-		getline(inFile, line4, '\n');
-		std::size_t pos = line4.find(':');
-		line4 = line4.substr(pos + 1);
-		Vector.push_back(line4);
+		getline(inFile, poly, '\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
+		std::size_t pos = poly.find(':');
+		poly = poly.substr(pos + 1);
+		Vector.push_back(poly); //push defenitions into vector, this will help order them later
+		
 	}
 	inFile.close();
+
+
 }
 
 
