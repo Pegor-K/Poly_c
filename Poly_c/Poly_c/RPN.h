@@ -1,52 +1,110 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include <vector>
+#include "Header.h"
+#include <iostream>
 #include <stack>
-template<typename T = double> class RPN
+#include "Polynomial.h"
+#include <stdio.h>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+/////////////////////////////////////////////////
+//implementations
+/////////////////////////////////////////////////
+
+template<typename T = double> 
+void RPN<T>::calculate(string operations)
 {
-private:
-	std::stack<T> Stack;
-public:
-	void Push(T Value)
+	int pos1, pos2;
+	while (operations[pos2] != '\0')
 	{
-		Stack.push(Value);
+		
+
+		
+
+
 	}
-	T Pop()
-	{
-		if (Stack.size() == 0)
+			
+		switch (input[0])
 		{
-			return 0;
+			case '+': add();
+			break;
+			case '-': subtract();
+			break;
+			case '*': multiply();
+		    break;
+			case '/': divide();
+			break;
 		}
+}
 
-		T Result = Stack.top();
-		Stack.pop();
-		return Result;
-	}
-	void Top()
+
+template<typename T = double>
+bool RPN<T>::isPoly()
+{
+	string polyTest = Queue.front;
+	if (polyTest[0] == 'p')
+		return true;
+	else
+		return false;
+}
+
+template<typename T = double>
+void RPN<T>::Push(T Value)
+{
+	Stack.push(Value);
+}
+
+template<typename T = double>
+T RPN<T>::Pop()
+{
+	if (Stack.size() == 0)
 	{
-		cout << Stack.top();
-		cout << endl;
+		return 0;
 	}
 
+	T Result = Stack.top();
+	Stack.pop();
+	return Result;
+}
 
+template<typename T = double>
+void RPN<T>::Top()
+{
 
-	void menu();
-	void choice();
-	//void input(RPN <T> calculator);
-	// void runfile(Types... data);
-	//bool isOperator(const char input);
-	//void performOperation(const string& input, RPN <Container, Types...>& calculator);
-	void add();
-	void subtract();
-	void multiply();
-	void divide();
-	void createfiles();
-	void readfiles();
-};
+	cout << Stack.top();
+	cout << endl;
 
+}
+
+//template<typename T = double>
+//void RPN<T>::Qpush(string value)
+//{
+//	Queue.push(value);
+//}
 //
-//ifstream inFile("inData.txt");
-//ofstream outFile("outData.txt");
+//template<typename T = double>
+//string RPN<T>::Qpop()
+//{
+//	if (Queue.size() == 0)
+//	{
+//		return 0;
+//	}
+//
+//	string Result = Queue.front();
+//	Queue.pop();
+//	return Result;
+//}
+//
+//template<typename T = double>
+//string RPN<T>::Qfront()
+//{
+//	return Queue.front();
+//
+//}
 
 
 //template<typename T = double>
@@ -142,48 +200,31 @@ public:
 template<typename T = double>
 void RPN<T>::add()
 {
-
-	cout << "Debug add function" << endl;
-
-	system("pause");
-
 	Push(Pop() + Pop());
 	cout << Stack.top();
 	cout << endl;
-
-
-
 }
 template<typename T = double>
 void RPN<T>::subtract()
 {
-	Push( 0  - Pop() + Pop());
+	Push(0 - Pop() + Pop());
 	cout << Stack.top();
 	cout << endl;
-
-
-
-	
 }
 template<typename T = double>
 void RPN<T>::multiply()
 {
-
-
-	Push( Pop() * Pop());
+	Push(Pop() * Pop());
 	cout << Stack.top();
 	cout << endl;
-
-	
 }
 
 template<typename T = double>
 void RPN<T>::divide()
 {
-	Push( 1 / Pop() * Pop());
+	Push(1 / Pop() * Pop());
 	cout << Stack.top();
 	cout << endl;
-
 }
 
 template<typename T = double>
@@ -213,8 +254,6 @@ void RPN <T>::menu()
 }
 
 //This creates the readme, as well as the input file format
-
-
 template<typename T = double>
 void RPN<T>::createfiles() {
 	ofstream readme("readme.txt");
@@ -224,33 +263,71 @@ void RPN<T>::createfiles() {
 	readme << "The following lines will be the polynomial definitions themselves." << endl;
 	readme << "You may alter the operations performed in the first line, and add or remove polynomials as desired" << endl;
 	readme << "Please be sure to enter additional polynomials in the same format they are given" << endl;
-	readme << "Ex. \"p5 4x4+2x3 + 2x\"." << endl;
+	readme << "Ex. \"p5: (4x^4)+(2x^3)+(2x)\"." << endl;
 	readme << "Polynomials must be in descending powers" << endl;
 
 	ofstream input("input.txt");
-	input << "(p1+p2)/p3*p4" << endl;
-	input << "p1 1x4 + 1x3 - 1x2 - 1x - 1" << endl;
-	input << "p2 2x3 + 2x2 + 3" << endl;
-	input << "p3 3x3 + 1" << endl;
-	input << "p4 4x4 - 8x" << endl;
+	input << "d1 d2 /" << endl;
+	input << "d3 +" << endl;
+	input << "d4 *" << endl;
+	input << "d1 +" << endl;
+	ofstream definitions("definitions.txt");
+	definitions << "p1: (3x ^ 2) + (2x) + (5)" << endl;
+	definitions << "p2: (5x ^ 2) + (3x) + (4)" << endl;
+	definitions << "P3: (2x ^ 2) + (6x) + (7)" << endl;
+	definitions << "P4: (4x ^ 2) + (7x) + (8)" << endl;
+
+	//Copy to input text 
+	/*p1 p2 + p3 / p4 *
+
+		p1: (3x ^ 2) + (2x) + (5)
+		p2: (5x ^ 2) + (3x) + (4)
+		P3: (2x ^ 2) + (6x) + (7)
+		P4: (4x ^ 2) + (7x) + (8)*/
+}
+
+template<typename T = double>
+void RPN<T>::readDefinitions()
+{
+	/*bool isPoly = false;
+	ifstream polyTest("definitions.txt");
+	string  testForPoly;
+	getline(polyTest, testForPoly, '\n');
+	std::size_t pos = testForPoly.find('p');
+	if (pos == 0)
+	{
+	isPoly = true;
+	}
+
+	polyTest.close();*/
+	// ignore this for now, this code works if we need it
+
+	// Code below is currently not working 
+
+	ifstream inFile("definitions.txt");
+
+	string poly;
+
+	while (!inFile.eof())
+	{
+		getline(inFile, poly, '\n');// read in lines to store tags, "d1: 5.76" or "p1: 2x3+2x+5"
+		std::size_t pos = poly.find(':');
+		poly = poly.substr(pos + 1);
+		Vector.push_back(poly); //push defenitions into vector, this will help order them later
+		
+	}
+	inFile.close();
+
+
 }
 
 
-template <typename T= double>
-void RPN<T>::readfiled() 
+template<typename T = double>
+string RPN<T>::readFormat()
 {
-	////////////new to read in from file
-	ifstream polyin("input.txt");
-	vector <string> vecin;
-	string temp1, format;
-
-	getline(polyin, format);
-	cout << "format is: " << format << endl;
-	while (polyin >> temp1) {
-		getline(polyin, temp1);
-		if (temp1.size() > 1) {
-			vecin.push_back(temp1);
-		}
-	}
-	polyin.close();
+	ifstream operationIn("input.txt");
+	string  operations;
+	getline(operationIn, operations, '\n');
+	operationIn.close();
+	return operations;
 }
