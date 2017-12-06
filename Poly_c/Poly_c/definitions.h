@@ -260,7 +260,7 @@ void RPN<T>::createfiles() {
 	readme << "The following lines will be the polynomial definitions themselves." << endl;
 	readme << "You may alter the operations performed in the first line, and add or remove polynomials as desired" << endl;
 	readme << "Please be sure to enter additional polynomials in the same format they are given" << endl;
-	readme << "Ex. \"p5 4x4+2x3 + 2x\"." << endl;
+	readme << "Ex. \"p5: (4x^4)+(2x^3)+(2x)\"." << endl;
 	readme << "Polynomials must be in descending powers" << endl;
 
 	ofstream input("input.txt");
@@ -270,6 +270,14 @@ void RPN<T>::createfiles() {
 	definitions << "d2: 8.9" << endl;
 	definitions << "d3: 9.2" << endl;
 	definitions << "d4: 22.5" << endl;
+
+	// Copy to input text 
+	/*p1 p2 + p3 / p4 *
+
+		p1: (3x ^ 2) + (2x) + (5)
+		p2 : (5x ^ 2) + (3x) + (4)
+		P3 : (2x ^ 2) + (6x) + (7)
+		P4 : (4x ^ 2) + (7x) + (8)*/
 }
 
 template<typename T = double>
