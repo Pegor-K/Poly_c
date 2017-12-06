@@ -30,32 +30,32 @@
 
 using namespace std;
 
-//class Polynomial
-//{
-//private:
-//	PolyTerm* front;
-//public:
-//	// Constructor
-//	Polynomial()
-//	{
-//		front = NULL;
-//	}
-//	Polynomial(string polyStr)
-//	{
-//		strToPoly(polyStr);
-//	}
-//	// Function Declarations
-//	int degree();
-//	int coefficient(int term);
-//	PolyTerm* getFront();
-//	void sum(PolyTerm* inpPoly);
-//	void dot(PolyTerm* inpPoly);
-//	int getTotTerms();
-//	void simplifyPoly();
-//	void strToPoly(string polyStr);
-//	string polyToStr();
-//	int intPow(int base, int weight);
-//};
+class Polynomial
+{
+private:
+	PolyTerm* front;
+public:
+	// Constructor
+	Polynomial()
+	{
+		front = NULL;
+	}
+	Polynomial(string polyStr)
+	{
+		strToPoly(polyStr);
+	}
+	// Function Declarations
+	int degree();
+	int coefficient(int term);
+	PolyTerm* getFront();
+	void sum(PolyTerm* inpPoly);
+	void dot(PolyTerm* inpPoly);
+	int getTotTerms();
+	void simplifyPoly();
+	void strToPoly(string polyStr);
+	string polyToStr();
+	int intPow(int base, int weight);
+};
 
 
 class Polynomial {

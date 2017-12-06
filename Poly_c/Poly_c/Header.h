@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Definitions.h>
+#include <definitions.h>
 #include <iostream>
 #include <string>
 #include <stack>
