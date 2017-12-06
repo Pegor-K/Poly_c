@@ -21,24 +21,19 @@ void RPN<T>::calculate(string operations)
 	int pos1, pos2;
 	while (operations[pos2] != '\0')
 	{
-		
-
-		
-
 
 	}
-			
-		switch (input[0])
-		{
-			case '+': add();
-			break;
-			case '-': subtract();
-			break;
-			case '*': multiply();
-		    break;
-			case '/': divide();
-			break;
-		}
+	switch (input[0])
+	{
+		case '+': add();
+		break;
+		case '-': subtract();
+		break;
+		case '*': multiply();
+		break;
+		case '/': divide();
+		break;
+	}
 }
 
 
@@ -317,8 +312,6 @@ void RPN<T>::readDefinitions()
 		
 	}
 	inFile.close();
-
-
 }
 
 

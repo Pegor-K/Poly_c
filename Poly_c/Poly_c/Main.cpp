@@ -99,46 +99,68 @@ int main()
 
 	// Limits files to only contain 10 polynomials
 	// Instantiates polys
-	/*for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 	{
 		switch (i)
 		{
 		case 0:
+		{
 			Polynomial P1(Calc.Vector[i]);
 			break;
+		}
 		case 1:
+		{
 			Polynomial P2(Calc.Vector[i]);
 			break;
+		}
 		case 2:
+		{
 			Polynomial P3(Calc.Vector[i]);
 			break;
+		}
 		case 3:
+		{
 			Polynomial P4(Calc.Vector[i]);
 			break;
+		}
 		case 4:
+		{
 			Polynomial P5(Calc.Vector[i]);
 			break;
+		}
 		case 5:
+		{
 			Polynomial P6(Calc.Vector[i]);
 			break;
+		}
 		case 6:
+		{
 			Polynomial P7(Calc.Vector[i]);
 			break;
+		}
 		case 7:
+		{
 			Polynomial P8(Calc.Vector[i]);
 			break;
+		}
 		case 8:
+		{
 			Polynomial P9(Calc.Vector[i]);
 			break;
+		}
 		case 9:
+		{
 			Polynomial P10(Calc.Vector[i]);
 			break;
+		}
 		default:
 			cout << "No polynomials were created" << endl;
 			break;
 		}
-	}*/
+	}
 
+	
+	
 	//Polynomial origPoly("(5*x^4)+(8*x^3)+(3*x^2)+(8)");
 	//Polynomial failPoly("(5*x^3)+(2*x^2)+32");
 	//Polynomial passPoly("(-5*x^-4)+(8*x^3)+(3*x^2)+(4*y^3)+(8)");
